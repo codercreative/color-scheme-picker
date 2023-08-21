@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+/* General styling */
 *,
 *::before,
 *::after {
@@ -13,16 +14,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Container for title and selecting the seed color and mode */
 .header-container {
-  max-width: 500px;
+  max-width: 100%;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 2em 1em 0 1em;
+  border-radius: 8px 8px 0 0;
+  position: relative;
 }
 
-.title {
-  color: #fff;
-  margin: 2em 0 1em 0;
+.header-title {
+  color: #2b283a;
+  padding: 1em 0 0.5em 0.3em;
 }
 
 .select-color-container {
@@ -30,23 +35,180 @@ body {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  gap: 5px;
+  padding: 0.5em;
 }
 
+.seed-color-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type="color"] {
+  height: 3em;
+}
+
+.seed-color,
+.color-scheme-selector,
+.select-btn {
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.color-scheme-selector,
+.select-btn {
+  color: #374151;
+  padding: 0.2em;
+  font-size: 1rem;
+}
+
+.seed-color {
+  margin: 0;
+}
+
+.color-scheme-selector {
+  width: 40%;
+}
+
+/* Container displaying the selected color mode scheme */
 .scheme-container {
-  max-width: 500px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+  border-radius: 0 0 8px 8px;
+  padding: 0.5em;
 }
 
-.color {
-  height: 300px;
-  border: 1px solid gray;
-}
-
-.hex {
+.hex-color {
+  height: 120px;
   color: #fff;
   text-align: center;
-  margin-top: 0.8em;
+  padding-top: 0.8em;
+  text-shadow: 2px 2px #191919f0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+}
+
+.hex-color:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.hex-code {
+  color: #2b283a;
+  text-align: center;
+  margin: 0.7em 0 1.3em 0;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+
+.hex-code:hover {
+  transform: scale(1.07);
+}
+
+/* TOGGLE LIGHT AND DARK MODE */
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+/* Design of toggle container */
+.toggle label {
+  background-color: #fff;
+  border: 2px solid #555;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  width: 2.5em;
+  height: 1.25em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.3125em;
+}
+
+/* Design of the circle within the toggle */
+.toggle label::after {
+  background-color: #555;
+  border-radius: 50%;
+  content: " ";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all ease-in-out 0.3s;
+  width: 1em;
+  height: 1em;
+}
+
+.toggle input[type="checkbox"]:checked ~ label {
+  background-color: #fff;
+  border-color: #dc8d04;
+}
+
+.toggle input[type="checkbox"]:checked ~ label::after {
+  background-color: #fba818;
+  transform: translateX(-1.3em);
+}
+
+/* Toggling to dark mode */
+.dark-mode.header-container,
+.dark-mode .select-color-container,
+.dark-mode .color-scheme-selector,
+.dark-mode.scheme-container {
+  background-color: #1f2937;
+}
+
+.dark-mode .select-btn {
+  background-color: #3d4b60;
+}
+
+.dark-mode .header-title,
+.dark-mode .select-btn,
+.dark-mode .hex-code {
+  color: #fff;
+}
+
+.dark-mode .color-scheme-selector {
+  color: #d5d4d8;
+}
+
+/* ALERT - TOOLTIP APPEARANCE */
+.tooltip {
+  background-color: #1f2937;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.2em;
+}
+
+/* MEDIA QUERY */
+@media (min-width: 600px) {
+  .header-container {
+    max-width: 700px;
+    margin: 2em auto 0;
+  }
+
+  .color-scheme-selector {
+    width: 70%;
+  }
+
+  .scheme-container {
+    margin: 0 auto;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hex-color {
+    border-radius: 0;
+    height: 300px;
+  }
 }

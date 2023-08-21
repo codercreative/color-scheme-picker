@@ -4,19 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="index.js" defer></script>
+
     <title>Color Scheme Generator</title>
   </head>
   <body>
-    <header class="header-container">
-      <h1 class="title">Color Scheme Generator</h1>
+    <header class="header-container" id="header-container">
+      <div class="toggle">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle"></label>
+      </div>
+      <h1 class="header-title">Color Scheme Generator</h1>
       <section class="select-color-container">
         <!-- Select seed color -->
-        <div>
-          <input type="color" id="seed-color" name="head" value="#e66465" />
+        <div class="seed-color-container">
+          <input
+            type="color"
+            class="seed-color"
+            id="seed-color"
+            name="head"
+            value="#e66465"
+          />
         </div>
         <!-- Select color scheme -->
-        <select name="color-scheme" id="color-scheme">
+        <select
+          name="color-scheme"
+          class="color-scheme-selector"
+          id="color-scheme-selector"
+        >
           <option value="monochrome" selected>Monochrome</option>
           <option value="monochrome-dark">Monochrome-dark</option>
           <option value="monochrome-light">Monochrome-light</option>
@@ -26,35 +40,15 @@
           <option value="triad">Triad</option>
         </select>
         <!-- Fetch color scheme -->
-        <button id="select-btn">Get color scheme</button>
+        <button class="select-btn" id="select-btn">Get color scheme</button>
       </section>
     </header>
     <!-- Display color scheme and hex codes -->
-    <section id="scheme-container" class="scheme-container">
-      <div class="color-column">
-        <div class="color" style="background-color: #ac1f20"></div>
-        <p class="hex">#ac1f20"</p>
-      </div>
-      <div class="color-column">
-        <div class="color" style="background-color: #f82526"></div>
-        <p class="hex">#f82526</p>
-      </div>
-      <div class="color-column">
-        <div class="color" style="background-color: #e24f50"></div>
-        <p class="hex">#e24f50</p>
-      </div>
-      <div class="color-column">
-        <div class="color" style="background-color: #ea7a7a"></div>
-        <p class="hex">#ea7a7a</p>
-      </div>
-      <div class="color-column">
-        <div class="color" style="background-color: #f1a5a6"></div>
-        <p class="hex">#f1a5a6</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>Created by Christina</p>
-    </footer>
+    <main id="scheme-container" class="scheme-container">
+      <!-- JavaScript generated code -->
+    </main>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script async src="index.js"></script>
   </body>
 </html>
