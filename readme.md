@@ -19,9 +19,13 @@
 - Finalize README file
 - Publish live URL
 
-### Challenges along the way
+### Considerations along the way
 
-- Have problems making the options dropdown box dark
+- Consider changing the toggle input element to a button
+
+- Consider adding code to make it possible to copy a color when pressing enter or the space bar
+
+- Consider making the options dropdown box dark
 
 ### Resources:
 
@@ -37,4 +41,10 @@
 
 [tippy.js](https://atomiks.github.io/tippyjs/)
 
-[sweet alert](<(https://sweetalert2.github.io/)>)
+[sweet alert](https://sweetalert2.github.io/)
+
+[W3 Schools: How to - Snackbar / Toast](https://www.w3schools.com/howto/howto_js_snackbar.asp)
+
+[MDN: ARIA: checkbox role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/checkbox_role)
+
+[Accessible toggle buttons](https://joshcollinsworth.com/blog/accessible-toggle-buttons)

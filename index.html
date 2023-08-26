@@ -4,48 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-
     <title>Color Scheme Generator</title>
   </head>
   <body>
-    <header class="header-container" id="header-container">
-      <div class="toggle">
-        <input type="checkbox" id="toggle" />
-        <label for="toggle"></label>
-      </div>
-      <h1 class="header-title">Color Scheme Generator</h1>
-      <section class="select-color-container">
-        <!-- Select seed color -->
-        <div class="seed-color-container">
-          <input
-            type="color"
-            class="seed-color"
-            id="seed-color"
-            name="head"
-            value="#e66465"
-          />
+    <main>
+      <section class="input-container" id="input-container">
+        <div class="toggle">
+          <input type="checkbox" id="toggle" />
+          <label
+            for="toggle"
+            tabindex="0"
+            role="switch"
+            aria-checked="false"
+          ></label>
         </div>
-        <!-- Select color scheme -->
-        <select
-          name="color-scheme"
-          class="color-scheme-selector"
-          id="color-scheme-selector"
-        >
-          <option value="monochrome" selected>Monochrome</option>
-          <option value="monochrome-dark">Monochrome-dark</option>
-          <option value="monochrome-light">Monochrome-light</option>
-          <option value="analogic">Analogic</option>
-          <option value="complement">Complement</option>
-          <option value="analogic-complement">Analogic-complement</option>
-          <option value="triad">Triad</option>
-        </select>
-        <!-- Fetch color scheme -->
-        <button class="select-btn" id="select-btn">Get color scheme</button>
+        <h1 class="input-title">Color Scheme Generator</h1>
+        <section class="select-color-container">
+          <!-- Select seed color -->
+          <div class="seed-color-container">
+            <input
+              type="color"
+              class="seed-color"
+              id="seed-color"
+              name="head"
+              value="#e66465"
+              aria-label="Select Seed Color"
+            />
+          </div>
+          <!-- Select color scheme -->
+          <select
+            name="color-scheme"
+            class="color-scheme-selector"
+            id="color-scheme-selector"
+            aria-label="Select color scheme"
+          >
+            <option value="monochrome" selected>Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+          </select>
+          <!-- Fetch color scheme -->
+          <button class="select-btn" id="select-btn">Get color scheme</button>
+        </section>
       </section>
-    </header>
-    <!-- Display color scheme and hex codes -->
-    <main id="scheme-container" class="scheme-container">
-      <!-- JavaScript generated code -->
+      <!-- Display color scheme and hex codes -->
+      <section id="scheme-container" class="scheme-container">
+        <!-- JavaScript generated code -->
+      </section>
     </main>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>

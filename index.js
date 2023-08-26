@@ -1,4 +1,4 @@
-const headerContainer = document.getElementById("header-container");
+const inputContainer = document.getElementById("input-container");
 const schemeContainer = document.getElementById("scheme-container");
 const toggle = document.getElementById("toggle");
 
@@ -18,7 +18,7 @@ function fetchAndRenderColorScheme() {
       let html = "";
       data.colors.forEach(function (color) {
         html += `
-        <div class="color-column">
+        <div class="color-column" tabindex="0">
           <div id=${color.hex.value} class="hex-color" data-tooltip="Copied!" style="background-color:${color.hex.value}">${color.name.value}</div>
           <p id=${color.hex.value} class="hex-code hover-effect" data-tooltip="Copied!">${color.hex.value}</p>
         </div>
@@ -28,6 +28,11 @@ function fetchAndRenderColorScheme() {
       schemeContainer.innerHTML = html;
     });
 
+  copyColor();
+}
+fetchAndRenderColorScheme();
+
+function copyColor() {
   schemeContainer.addEventListener("click", function (e) {
     let copiedHexCode = e.target.id;
     if (copiedHexCode) {
@@ -42,14 +47,8 @@ function fetchAndRenderColorScheme() {
     }
   });
 }
-fetchAndRenderColorScheme();
 
-toggle.addEventListener("input", function (e) {
-  if (e.target.checked) {
-    headerContainer.classList.add("dark-mode");
-    schemeContainer.classList.add("dark-mode");
-  } else {
-    headerContainer.classList.remove("dark-mode");
-    schemeContainer.classList.remove("dark-mode");
-  }
+toggle.addEventListener("input", function () {
+  inputContainer.classList.toggle("dark-mode");
+  schemeContainer.classList.toggle("dark-mode");
 });
