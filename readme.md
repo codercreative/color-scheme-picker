@@ -1,7 +1,5 @@
 ## Color Scheme Picker
 
-### The requirements:
-
 ![screenshot](images/requirements-stretch.png)
 
 ### How does the app work?
@@ -21,11 +19,10 @@
 
 ### Considerations along the way
 
-- Consider changing the toggle input element to a button
-
-- Consider adding code to make it possible to copy a color when pressing enter or the space bar
-
-- Consider making the options dropdown box dark
+- Made sure a sample color scheme is displayed on page load
+- Added a clipboard functionality
+- Made the app responsive
+- Added light-dark mode
 
 ### Resources:
 
